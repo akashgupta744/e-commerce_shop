@@ -38,8 +38,22 @@
             <tfoot>
                 <tr>
                     <th colspan="4"></th>
-                    <th class="" colspan="">Total</th>
+
+                    
+                    <th><div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="idsp" id="idsp" checked/>
+                      <label class="form-check-label" for=""> Price </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input" type="checkbox" value="taxs" id="taxs" checked/>
+                      <label class="form-check-label" for="taxs"> 2% tax </label>
+                    </div>
+                    
+                    </th>
                     <th>{{products|total_cart_price:request.session.cart|currency}}</th>
+                    <th>{{taxs|total_cart_price:request.session.cart|currency}}</th>
+                    <th class=""  colspan="">Total</th>
                 </tr>
             </tfoot>
         </table>
