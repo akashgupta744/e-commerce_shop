@@ -10,14 +10,11 @@ class Order(models.Model):
     customer = models.ForeignKey(Customer,
                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.IntegerField()
     address = models.CharField (max_length=50, default='', blank=True)
     phone = models.CharField (max_length=50, default='', blank=True)
     date = models.DateField (default=datetime.datetime.today)
     status = models.BooleanField (default=False)
-
-    def __str__(self):
-        return self.name
 
     def placeOrder(self):
         self.save()
